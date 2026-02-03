@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   BuildingOffice2Icon,
   AcademicCapIcon,
@@ -9,11 +9,12 @@ import {
   UserGroupIcon,
   ArrowPathIcon,
   ChartBarIcon,
-} from '@heroicons/react/24/outline';
-import Section from '../components/common/Section';
-import SectionTitle from '../components/common/SectionTitle';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
+} from "@heroicons/react/24/outline";
+import Section from "../components/common/Section";
+import SectionTitle from "../components/common/SectionTitle";
+import Card from "../components/common/Card";
+import Button from "../components/common/Button";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,21 +30,21 @@ const TrainingPage = () => {
         y: 50,
         opacity: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
 
       programsRef.current.forEach((program, i) => {
         gsap.from(program, {
           scrollTrigger: {
             trigger: program,
-            start: 'top bottom-=100',
-            toggleActions: 'play none none reverse',
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
           },
           y: 80,
           opacity: 0,
           duration: 0.8,
           delay: i * 0.15,
-          ease: 'power3.out',
+          ease: "power3.out",
         });
       });
     });
@@ -52,59 +53,59 @@ const TrainingPage = () => {
   }, []);
 
   const corporateAreas = [
-    'Blockchain Fundamentals & Enterprise Use Cases',
-    'Smart Contracts & Secure Development Practices',
-    'Web 3.0 Architecture & Governance',
-    'NFT, Digital Assets & Compliance Awareness',
-    'Information Security, Risk, and Privacy Foundations',
-    'AI Ethics & Responsible AI Implementation',
+    "Blockchain Fundamentals & Enterprise Use Cases",
+    "Smart Contracts & Secure Development Practices",
+    "Web 3.0 Architecture & Governance",
+    "NFT, Digital Assets & Compliance Awareness",
+    "Information Security, Risk, and Privacy Foundations",
+    "AI Ethics & Responsible AI Implementation",
   ];
 
   const academicAreas = [
-    'Introduction to Blockchain & Web 3.0',
-    'NFTs, Metaverse & Digital Economies',
-    'Secure Coding & Technology Ethics',
-    'AI Fundamentals & Machine Learning',
-    'Data Privacy & Cybersecurity Basics',
-    'Career-oriented Workshops and Bootcamps',
+    "Introduction to Blockchain & Web 3.0",
+    "NFTs, Metaverse & Digital Economies",
+    "Secure Coding & Technology Ethics",
+    "AI Fundamentals & Machine Learning",
+    "Data Privacy & Cybersecurity Basics",
+    "Career-oriented Workshops and Bootcamps",
   ];
 
   const benefits = [
     {
       icon: CursorArrowRaysIcon,
-      title: 'Industry-aligned Curriculum',
+      title: "Industry-aligned Curriculum",
       description:
-        'Content designed by practitioners with real-world experience in emerging technologies.',
+        "Content designed by practitioners with real-world experience in emerging technologies.",
     },
     {
       icon: ComputerDesktopIcon,
-      title: 'Hands-on Learning',
+      title: "Hands-on Learning",
       description:
-        'Practical exercises and projects that mirror actual industry challenges and workflows.',
+        "Practical exercises and projects that mirror actual industry challenges and workflows.",
     },
     {
       icon: UserGroupIcon,
-      title: 'Expert Instructors',
+      title: "Expert Instructors",
       description:
-        'Learn from experienced professionals who have deployed these technologies at scale.',
+        "Learn from experienced professionals who have deployed these technologies at scale.",
     },
     {
       icon: ArrowPathIcon,
-      title: 'Customizable Modules',
+      title: "Customizable Modules",
       description:
         "Tailored programs based on your organization's specific needs and skill gaps.",
     },
     {
       icon: ChartBarIcon,
-      title: 'Progress Tracking',
+      title: "Progress Tracking",
       description:
-        'Comprehensive assessments and certifications to measure learning outcomes.',
+        "Comprehensive assessments and certifications to measure learning outcomes.",
     },
     {
-      icon: 'handshake-svg',
-      title: 'Post-training Support',
+      icon: "handshake-svg",
+      title: "Post-training Support",
       description:
-        'Ongoing mentorship and resources to ensure successful technology adoption.',
+        "Ongoing mentorship and resources to ensure successful technology adoption.",
     },
   ];
 
@@ -119,8 +120,9 @@ const TrainingPage = () => {
             <span className="text-white">Building Skills for Tomorrow</span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Empower your workforce with practical, industry-relevant skills in blockchain,
-            Web 3.0, AI, and emerging technologies through our comprehensive training programs.
+            Empower your workforce with practical, industry-relevant skills in
+            blockchain, Web 3.0, AI, and emerging technologies through our
+            comprehensive training programs.
           </p>
         </div>
       </Section>
@@ -135,12 +137,15 @@ const TrainingPage = () => {
                 Corporate Training Programs
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                Upskill your workforce to confidently operate in emerging technology environments.
-                Our programs are designed for professionals at all levels, from executives to technical teams.
+                Upskill your workforce to confidently operate in emerging
+                technology environments. Our programs are designed for
+                professionals at all levels, from executives to technical teams.
               </p>
 
               <div className="space-y-4 mb-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Training Areas</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Training Areas
+                </h3>
                 {corporateAreas.map((area, i) => (
                   <div key={i} className="flex items-start">
                     <div className="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-4 flex-shrink-0" />
@@ -152,34 +157,49 @@ const TrainingPage = () => {
 
             <div className="flex-1">
               <Card variant="gradient" className="sticky top-24">
-                <h3 className="text-2xl font-bold mb-6 text-white">Program Highlights</h3>
+                <h3 className="text-2xl font-bold mb-6 text-white">
+                  Program Highlights
+                </h3>
                 <div className="space-y-6">
                   <div>
-                    <div className="text-accent-400 font-semibold mb-2">✓ Industry-aligned Curriculum</div>
+                    <div className="text-accent-400 font-semibold mb-2">
+                      ✓ Industry-aligned Curriculum
+                    </div>
                     <p className="text-gray-400 text-sm">
-                      Content reflecting current market demands and best practices
+                      Content reflecting current market demands and best
+                      practices
                     </p>
                   </div>
                   <div>
-                    <div className="text-accent-400 font-semibold mb-2">✓ Practical, Hands-on Learning</div>
+                    <div className="text-accent-400 font-semibold mb-2">
+                      ✓ Practical, Hands-on Learning
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Real projects and case studies from actual deployments
                     </p>
                   </div>
                   <div>
-                    <div className="text-accent-400 font-semibold mb-2">✓ Customized Modules</div>
+                    <div className="text-accent-400 font-semibold mb-2">
+                      ✓ Customized Modules
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Tailored to your organization's specific needs and goals
                     </p>
                   </div>
                   <div>
-                    <div className="text-accent-400 font-semibold mb-2">✓ Expert Practitioners</div>
+                    <div className="text-accent-400 font-semibold mb-2">
+                      ✓ Expert Practitioners
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Delivered by professionals with field experience
                     </p>
                   </div>
                 </div>
-                <Button className="w-full mt-8">Request Corporate Training</Button>
+                <Link to="/contact-us">
+                  <Button className="w-full mt-8">
+                    Request Corporate Training
+                  </Button>
+                </Link>
               </Card>
             </div>
           </div>
@@ -196,12 +216,15 @@ const TrainingPage = () => {
                 College & University Training
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                Prepare students for careers in next-generation technologies. Our academic programs
-                bridge the gap between theoretical knowledge and industry requirements.
+                Prepare students for careers in next-generation technologies.
+                Our academic programs bridge the gap between theoretical
+                knowledge and industry requirements.
               </p>
 
               <div className="space-y-4 mb-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Focus Areas</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Focus Areas
+                </h3>
                 {academicAreas.map((area, i) => (
                   <div key={i} className="flex items-start">
                     <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-4 flex-shrink-0" />
@@ -213,34 +236,49 @@ const TrainingPage = () => {
 
             <div className="flex-1">
               <Card variant="gradient" className="sticky top-24">
-                <h3 className="text-2xl font-bold mb-6 text-white">Student Benefits</h3>
+                <h3 className="text-2xl font-bold mb-6 text-white">
+                  Student Benefits
+                </h3>
                 <div className="space-y-6">
                   <div>
-                    <div className="text-primary-400 font-semibold mb-2">✓ Real-world Industry Exposure</div>
+                    <div className="text-primary-400 font-semibold mb-2">
+                      ✓ Real-world Industry Exposure
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Learn from actual industry projects and challenges
                     </p>
                   </div>
                   <div>
-                    <div className="text-primary-400 font-semibold mb-2">✓ Beyond Theory</div>
+                    <div className="text-primary-400 font-semibold mb-2">
+                      ✓ Beyond Theory
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Practical learning through labs, projects, and simulations
                     </p>
                   </div>
                   <div>
-                    <div className="text-primary-400 font-semibold mb-2">✓ Career Readiness</div>
+                    <div className="text-primary-400 font-semibold mb-2">
+                      ✓ Career Readiness
+                    </div>
                     <p className="text-gray-400 text-sm">
                       Skills aligned with market demands and job requirements
                     </p>
                   </div>
                   <div>
-                    <div className="text-primary-400 font-semibold mb-2">✓ Future-focused Skills</div>
+                    <div className="text-primary-400 font-semibold mb-2">
+                      ✓ Future-focused Skills
+                    </div>
                     <p className="text-gray-400 text-sm">
-                      Technologies that will define the next decade of innovation
+                      Technologies that will define the next decade of
+                      innovation
                     </p>
                   </div>
                 </div>
-                <Button className="w-full mt-8">Request Academic Program</Button>
+                <Link to="/contact-us">
+                  <Button className="w-full mt-8">
+                    Request Academic Program
+                  </Button>
+                </Link>
               </Card>
             </div>
           </div>
@@ -258,7 +296,7 @@ const TrainingPage = () => {
               variant="glass"
               className="group"
             >
-              {benefit.icon === 'handshake-svg' ? (
+              {benefit.icon === "handshake-svg" ? (
                 <i className="fa-regular fa-handshake text-5xl mb-4 text-primary-400 group-hover:scale-110 transition-transform duration-300"></i>
               ) : (
                 <benefit.icon className="w-14 h-14 mb-4 text-primary-400 group-hover:scale-110 transition-transform duration-300" />
@@ -267,7 +305,9 @@ const TrainingPage = () => {
               <h3 className="text-xl font-bold mb-3 text-white group-hover:text-primary-400 transition-colors duration-300">
                 {benefit.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+              <p className="text-gray-400 leading-relaxed">
+                {benefit.description}
+              </p>
             </Card>
           ))}
         </div>
@@ -282,20 +322,32 @@ const TrainingPage = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                We believe technology adoption must be supported by strong knowledge foundations.
-                Our programs emphasize <span className="text-white font-semibold">clarity over complexity</span>,
-                ensuring concepts are accessible without sacrificing depth.
+                We believe technology adoption must be supported by strong
+                knowledge foundations. Our programs emphasize{" "}
+                <span className="text-white font-semibold">
+                  clarity over complexity
+                </span>
+                , ensuring concepts are accessible without sacrificing depth.
               </p>
               <p>
-                Every module integrates <span className="text-white font-semibold">ethics, security, and responsibility</span>,
-                preparing learners not just to use technology, but to deploy it thoughtfully and safely.
+                Every module integrates{" "}
+                <span className="text-white font-semibold">
+                  ethics, security, and responsibility
+                </span>
+                , preparing learners not just to use technology, but to deploy
+                it thoughtfully and safely.
               </p>
               <p>
-                We focus on <span className="text-white font-semibold">practical skills with long-term relevance</span>,
-                ensuring the knowledge gained today remains valuable as the technology landscape evolves.
+                We focus on{" "}
+                <span className="text-white font-semibold">
+                  practical skills with long-term relevance
+                </span>
+                , ensuring the knowledge gained today remains valuable as the
+                technology landscape evolves.
               </p>
               <p className="text-2xl font-bold text-white pt-6">
-                Because the future of technology depends on how well people understand and use it today.
+                Because the future of technology depends on how well people
+                understand and use it today.
               </p>
             </div>
           </div>
@@ -309,11 +361,16 @@ const TrainingPage = () => {
             Ready to Upskill Your Team?
           </h2>
           <p className="text-xl text-gray-300 mb-10">
-            Contact us to design a custom training program tailored to your organization's needs.
+            Contact us to design a custom training program tailored to your
+            organization's needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button size="lg">Schedule Consultation</Button>
-            <Button variant="secondary" size="lg">Download Brochure</Button>
+            <Link to="/contact-us">
+              <Button size="lg">Schedule Consultation</Button>
+            </Link>
+            <Button variant="secondary" size="lg">
+              Download Brochure
+            </Button>
           </div>
         </div>
       </Section>

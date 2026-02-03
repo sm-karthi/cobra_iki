@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import TrainingPage from './pages/TrainingPage';
 import AIServicesPage from './pages/AIServicesPage';
+import ContactUsPage from './pages/ContactUsPage';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/training" element={<TrainingPage />} />
           <Route path="/ai-services" element={<AIServicesPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
         </Routes>
         <Footer />
       </div>

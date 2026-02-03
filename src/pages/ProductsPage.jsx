@@ -1,17 +1,18 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Section from '../components/common/Section';
-import SectionTitle from '../components/common/SectionTitle';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Section from "../components/common/Section";
+import SectionTitle from "../components/common/SectionTitle";
+import Card from "../components/common/Card";
+import Button from "../components/common/Button";
 
 import {
   LinkIcon,
   SwatchIcon,
   GlobeAltIcon,
   RocketLaunchIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,21 +28,21 @@ const ProductsPage = () => {
         y: 50,
         opacity: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
 
       productsRef.current.forEach((product, i) => {
         gsap.from(product, {
           scrollTrigger: {
             trigger: product,
-            start: 'top bottom-=100',
-            toggleActions: 'play none none reverse',
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
           },
           y: 80,
           opacity: 0,
           duration: 0.8,
           delay: i * 0.1,
-          ease: 'power3.out',
+          ease: "power3.out",
         });
       });
     });
@@ -51,98 +52,118 @@ const ProductsPage = () => {
 
   const products = [
     {
-      id: 'blockchain',
-      title: 'Blockchain Solutions',
-      description: 'Practical, secure, and scalable blockchain ecosystems for real-world use cases.',
+      id: "blockchain",
+      title: "Blockchain Solutions",
+      description:
+        "Practical, secure, and scalable blockchain ecosystems for real-world use cases.",
       icon: LinkIcon,
       features: [
         {
-          name: 'Gen Z Banking Platforms',
-          description: 'Next-generation digital banking solutions designed for the modern user with seamless UX and robust security.',
+          name: "Gen Z Banking Platforms",
+          description:
+            "Next-generation digital banking solutions designed for the modern user with seamless UX and robust security.",
         },
         {
-          name: 'Digital Exchanges',
-          description: 'High-performance trading platforms with enterprise-grade security and compliance built-in.',
+          name: "Digital Exchanges",
+          description:
+            "High-performance trading platforms with enterprise-grade security and compliance built-in.",
         },
         {
-          name: 'Smart Contract Development',
-          description: 'Audited smart contracts optimized for gas efficiency and security across multiple blockchains.',
+          name: "Smart Contract Development",
+          description:
+            "Audited smart contracts optimized for gas efficiency and security across multiple blockchains.",
         },
         {
-          name: 'Tokenization Frameworks',
-          description: 'Complete asset tokenization solutions with regulatory compliance and interoperability.',
+          name: "Tokenization Frameworks",
+          description:
+            "Complete asset tokenization solutions with regulatory compliance and interoperability.",
         },
       ],
     },
     {
-      id: 'nft',
-      title: 'NFT & Digital Asset Platforms',
-      description: 'End-to-end NFT solutions with transparency, IP protection, and user trust.',
+      id: "nft",
+      title: "NFT & Digital Asset Platforms",
+      description:
+        "End-to-end NFT solutions with transparency, IP protection, and user trust.",
       icon: SwatchIcon,
       features: [
         {
-          name: 'NFT Development & Minting',
-          description: 'Custom NFT creation, minting, and management with multi-chain support.',
+          name: "NFT Development & Minting",
+          description:
+            "Custom NFT creation, minting, and management with multi-chain support.",
         },
         {
-          name: 'Digital Merchandising',
-          description: 'Transform physical products into digital collectibles with provenance tracking.',
+          name: "Digital Merchandising",
+          description:
+            "Transform physical products into digital collectibles with provenance tracking.",
         },
         {
-          name: 'Asset Tokenization',
-          description: 'Convert real-world assets into digital tokens with legal compliance frameworks.',
+          name: "Asset Tokenization",
+          description:
+            "Convert real-world assets into digital tokens with legal compliance frameworks.",
         },
         {
-          name: 'Marketplace Integration',
-          description: 'Seamless integration with leading NFT marketplaces and custom marketplace development.',
+          name: "Marketplace Integration",
+          description:
+            "Seamless integration with leading NFT marketplaces and custom marketplace development.",
         },
       ],
     },
     {
-      id: 'metaverse',
-      title: 'Metaverse & Ikiverse',
-      description: 'Immersive digital environments blending creativity with measurable business value.',
+      id: "metaverse",
+      title: "Metaverse & Ikiverse",
+      description:
+        "Immersive digital environments blending creativity with measurable business value.",
       icon: GlobeAltIcon,
       features: [
         {
-          name: 'Ikiverse Development',
-          description: 'Our proprietary metaverse platform built for scalability and meaningful engagement.',
+          name: "Ikiverse Development",
+          description:
+            "Our proprietary metaverse platform built for scalability and meaningful engagement.",
         },
         {
-          name: 'Virtual Land & Experiences',
-          description: 'Create, own, and monetize virtual real estate and interactive experiences.',
+          name: "Virtual Land & Experiences",
+          description:
+            "Create, own, and monetize virtual real estate and interactive experiences.",
         },
         {
-          name: 'Gaming & Interactive Platforms',
-          description: 'Build engaging gaming experiences with play-to-earn mechanics and social features.',
+          name: "Gaming & Interactive Platforms",
+          description:
+            "Build engaging gaming experiences with play-to-earn mechanics and social features.",
         },
         {
-          name: 'Brand-led Metaverse Engagement',
-          description: 'Help brands create authentic presence and engagement in the metaverse.',
+          name: "Brand-led Metaverse Engagement",
+          description:
+            "Help brands create authentic presence and engagement in the metaverse.",
         },
       ],
     },
     {
-      id: 'web3',
-      title: 'Web 3.0 Services',
-      description: 'Comprehensive support for enterprises at every stage of their Web 3.0 journey.',
+      id: "web3",
+      title: "Web 3.0 Services",
+      description:
+        "Comprehensive support for enterprises at every stage of their Web 3.0 journey.",
       icon: RocketLaunchIcon,
       features: [
         {
-          name: 'Strategy & Consulting',
-          description: 'Expert guidance on Web 3.0 adoption, roadmap development, and business transformation.',
+          name: "Strategy & Consulting",
+          description:
+            "Expert guidance on Web 3.0 adoption, roadmap development, and business transformation.",
         },
         {
-          name: 'Application Development',
-          description: 'Build decentralized applications (dApps) with modern frameworks and best practices.',
+          name: "Application Development",
+          description:
+            "Build decentralized applications (dApps) with modern frameworks and best practices.",
         },
         {
-          name: 'Integration & Implementation',
-          description: 'Seamlessly integrate Web 3.0 technologies with existing enterprise systems.',
+          name: "Integration & Implementation",
+          description:
+            "Seamlessly integrate Web 3.0 technologies with existing enterprise systems.",
         },
         {
-          name: 'Ongoing Support & Optimization',
-          description: '24/7 monitoring, maintenance, and performance optimization for Web 3.0 solutions.',
+          name: "Ongoing Support & Optimization",
+          description:
+            "24/7 monitoring, maintenance, and performance optimization for Web 3.0 solutions.",
         },
       ],
     },
@@ -159,8 +180,9 @@ const ProductsPage = () => {
             <span className="text-white">Built for the Future</span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Enterprise-grade solutions designed to help organizations confidently adopt 
-            emerging technologies while maintaining security, compliance, and business clarity.
+            Enterprise-grade solutions designed to help organizations
+            confidently adopt emerging technologies while maintaining security,
+            compliance, and business clarity.
           </p>
         </div>
       </Section>
@@ -173,7 +195,7 @@ const ProductsPage = () => {
           <Section
             key={product.id}
             id={product.id}
-            background={index % 2 === 0 ? 'default' : 'grid'}
+            background={index % 2 === 0 ? "default" : "grid"}
           >
             <div ref={(el) => (productsRef.current[index] = el)}>
               <div className="flex items-center mb-12">
@@ -215,8 +237,12 @@ const ProductsPage = () => {
             Let's discuss how our products can transform your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button size="lg">Schedule Consultation</Button>
-            <Button variant="secondary" size="lg">View Case Studies</Button>
+            <Link to="/contact-us">
+              <Button size="lg">Schedule Consultation</Button>
+            </Link>
+            <Button variant="secondary" size="lg">
+              View Case Studies
+            </Button>
           </div>
         </div>
       </Section>

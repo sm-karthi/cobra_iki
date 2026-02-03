@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Button from '../common/Button';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Button from "../common/Button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,8 +12,8 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -21,18 +21,18 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'AI Services', path: '/ai-services' },
-    { name: 'Training', path: '/training' },
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: "AI Services", path: "/ai-services" },
+    { name: "Training", path: "/training" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-dark-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl'
-          : 'bg-transparent'
+          ? "bg-dark-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,8 +55,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   location.pathname === link.path
-                    ? 'text-primary-400 bg-primary-500/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? "text-primary-400 bg-primary-500/10"
+                    : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
                 {link.name}
@@ -66,9 +66,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button size="sm">
-              Contact Us
-            </Button>
+            <Link to="/contact-us">
+              <Button size="sm">Contact Us</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,17 +80,17 @@ const Navbar = () => {
             <div className="w-6 h-5 flex flex-col justify-between">
               <span
                 className={`block h-0.5 bg-white transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                  isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
                 className={`block h-0.5 bg-white transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
+                  isMobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
                 className={`block h-0.5 bg-white transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
             </div>
@@ -102,8 +102,8 @@ const Navbar = () => {
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen
-            ? 'max-h-96 opacity-100'
-            : 'max-h-0 opacity-0 overflow-hidden'
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <div className="px-4 py-6 bg-dark-800/95 backdrop-blur-xl border-t border-white/10">
@@ -114,16 +114,18 @@ const Navbar = () => {
                 to={link.path}
                 className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
                   location.pathname === link.path
-                    ? 'text-primary-400 bg-primary-500/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? "text-primary-400 bg-primary-500/10"
+                    : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full" size="sm">
-              Contact Us
-            </Button>
+            <Link to="/contact-us">
+              <Button className="w-full" size="sm">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

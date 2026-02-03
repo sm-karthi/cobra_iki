@@ -1,13 +1,18 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Section from '../components/common/Section';
-import SectionTitle from '../components/common/SectionTitle';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Section from "../components/common/Section";
+import SectionTitle from "../components/common/SectionTitle";
+import Card from "../components/common/Card";
+import Button from "../components/common/Button";
 
 // ✅ Heroicons
-import { ComputerDesktopIcon, ChartBarIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import {
+  ComputerDesktopIcon,
+  ChartBarIcon,
+  LockClosedIcon,
+} from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,20 +29,20 @@ const AIServicesPage = () => {
         y: 50,
         opacity: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
 
       servicesRef.current.forEach((service, i) => {
         gsap.from(service, {
           scrollTrigger: {
             trigger: service,
-            start: 'top bottom-=100',
-            toggleActions: 'play none none reverse',
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
           },
           x: i % 2 === 0 ? -100 : 100,
           opacity: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         });
       });
 
@@ -45,14 +50,14 @@ const AIServicesPage = () => {
         gsap.from(stat, {
           scrollTrigger: {
             trigger: stat,
-            start: 'top bottom-=50',
-            toggleActions: 'play none none reverse',
+            start: "top bottom-=50",
+            toggleActions: "play none none reverse",
           },
           scale: 0,
           opacity: 0,
           duration: 0.6,
           delay: i * 0.1,
-          ease: 'back.out(1.7)',
+          ease: "back.out(1.7)",
         });
       });
     });
@@ -62,104 +67,122 @@ const AIServicesPage = () => {
 
   const services = [
     {
-      id: 'ai',
+      id: "ai",
       icon: ComputerDesktopIcon,
-      title: 'Artificial Intelligence Solutions',
-      description: 'Transform your business with cutting-edge AI that balances innovation with ethical governance.',
+      title: "Artificial Intelligence Solutions",
+      description:
+        "Transform your business with cutting-edge AI that balances innovation with ethical governance.",
       offerings: [
         {
-          name: 'Predictive Analytics',
-          details: 'Custom AI models for contract review automation, fraud detection, and intelligent forecasting.',
+          name: "Predictive Analytics",
+          details:
+            "Custom AI models for contract review automation, fraud detection, and intelligent forecasting.",
         },
         {
-          name: 'Generative AI',
-          details: 'Adapted tools for pharmaceutical R&D and content generation with bias mitigation frameworks.',
+          name: "Generative AI",
+          details:
+            "Adapted tools for pharmaceutical R&D and content generation with bias mitigation frameworks.",
         },
         {
-          name: 'High-risk AI Compliance',
-          details: 'Risk assessments and human oversight as mandated by EU AI Act and global regulations.',
+          name: "High-risk AI Compliance",
+          details:
+            "Risk assessments and human oversight as mandated by EU AI Act and global regulations.",
         },
         {
-          name: 'AI Governance',
-          details: 'Comprehensive policies and frameworks ensuring responsible AI deployment across your organization.',
+          name: "AI Governance",
+          details:
+            "Comprehensive policies and frameworks ensuring responsible AI deployment across your organization.",
         },
       ],
     },
     {
-      id: 'analytics',
+      id: "analytics",
       icon: ChartBarIcon,
-      title: 'Data Analytics Platforms',
-      description: 'Turn your data into actionable insights with real-time dashboards and advanced ML pipelines.',
+      title: "Data Analytics Platforms",
+      description:
+        "Turn your data into actionable insights with real-time dashboards and advanced ML pipelines.",
       offerings: [
         {
-          name: 'Real-time Dashboards',
-          details: 'Banking risk modeling and pharmaceutical trial optimization with live data visualization.',
+          name: "Real-time Dashboards",
+          details:
+            "Banking risk modeling and pharmaceutical trial optimization with live data visualization.",
         },
         {
-          name: 'Machine Learning Pipelines',
-          details: 'Seamlessly integrate with existing infrastructure, delivering 30-50% efficiency gains.',
+          name: "Machine Learning Pipelines",
+          details:
+            "Seamlessly integrate with existing infrastructure, delivering 30-50% efficiency gains.",
         },
         {
-          name: 'Scalable Analytics',
-          details: 'Handle terabytes of regulated data with built-in security and compliance controls.',
+          name: "Scalable Analytics",
+          details:
+            "Handle terabytes of regulated data with built-in security and compliance controls.",
         },
         {
-          name: 'Advanced Reporting',
-          details: 'Automated insights generation with customizable reports for stakeholders at all levels.',
+          name: "Advanced Reporting",
+          details:
+            "Automated insights generation with customizable reports for stakeholders at all levels.",
         },
       ],
     },
     {
-      id: 'security',
+      id: "security",
       icon: LockClosedIcon,
-      title: 'Data Privacy & Security',
-      description: 'Protect sensitive information with privacy-enhancing technologies and comprehensive security audits.',
+      title: "Data Privacy & Security",
+      description:
+        "Protect sensitive information with privacy-enhancing technologies and comprehensive security audits.",
       offerings: [
         {
-          name: 'Privacy-Enhancing Technologies',
-          details: 'Data masking, pseudonymization, and encryption for AI training datasets and production systems.',
+          name: "Privacy-Enhancing Technologies",
+          details:
+            "Data masking, pseudonymization, and encryption for AI training datasets and production systems.",
         },
         {
-          name: 'Compliance Audits',
-          details: 'Comprehensive GDPR, CCPA, and EU AI Act audits including cross-border data transfer strategies.',
+          name: "Compliance Audits",
+          details:
+            "Comprehensive GDPR, CCPA, and EU AI Act audits including cross-border data transfer strategies.",
         },
         {
-          name: 'Incident Response',
-          details: 'Continuous monitoring to counter AI-specific threats like model poisoning and data breaches.',
+          name: "Incident Response",
+          details:
+            "Continuous monitoring to counter AI-specific threats like model poisoning and data breaches.",
         },
         {
-          name: 'Security Architecture',
-          details: 'Design and implement defense-in-depth strategies tailored to your industry requirements.',
+          name: "Security Architecture",
+          details:
+            "Design and implement defense-in-depth strategies tailored to your industry requirements.",
         },
       ],
     },
   ];
 
   const stats = [
-    { value: '70%', label: 'Faster Compliance Audits' },
-    { value: '40%', label: 'Cost Reduction' },
-    { value: '50+', label: 'Zero-incident Projects' },
-    { value: '99.9%', label: 'Client Satisfaction' },
+    { value: "70%", label: "Faster Compliance Audits" },
+    { value: "40%", label: "Cost Reduction" },
+    { value: "50+", label: "Zero-incident Projects" },
+    { value: "99.9%", label: "Client Satisfaction" },
   ];
 
   const caseStudies = [
     {
-      industry: 'Legal',
-      title: 'Contract Analytics Transformation',
-      description: 'Top Chennai-based firm used our AI for contract analytics, cutting review costs by 60% while passing EU AI Act audits.',
-      impact: '60% Cost Reduction',
+      industry: "Legal",
+      title: "Contract Analytics Transformation",
+      description:
+        "Top Chennai-based firm used our AI for contract analytics, cutting review costs by 60% while passing EU AI Act audits.",
+      impact: "60% Cost Reduction",
     },
     {
-      industry: 'Banking',
-      title: 'Advanced Fraud Prevention',
-      description: 'Implemented pseudonymized data pipelines for a major bank, detecting 25% more threats without compromising privacy.',
-      impact: '25% More Threats Detected',
+      industry: "Banking",
+      title: "Advanced Fraud Prevention",
+      description:
+        "Implemented pseudonymized data pipelines for a major bank, detecting 25% more threats without compromising privacy.",
+      impact: "25% More Threats Detected",
     },
     {
-      industry: 'Pharmaceutical',
-      title: 'Clinical Trial Acceleration',
-      description: 'Enabled secure analytics for drug trials, anonymizing datasets to comply with health data laws.',
-      impact: '45% Faster Insights',
+      industry: "Pharmaceutical",
+      title: "Clinical Trial Acceleration",
+      description:
+        "Enabled secure analytics for drug trials, anonymizing datasets to comply with health data laws.",
+      impact: "45% Faster Insights",
     },
   ];
 
@@ -174,8 +197,8 @@ const AIServicesPage = () => {
             <span className="text-white">For Critical Industries</span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Cutting-edge artificial intelligence, data analytics, and privacy solutions 
-            tailored for legal, banking, and pharmaceutical sectors.
+            Cutting-edge artificial intelligence, data analytics, and privacy
+            solutions tailored for legal, banking, and pharmaceutical sectors.
           </p>
         </div>
       </Section>
@@ -188,12 +211,12 @@ const AIServicesPage = () => {
           <Section
             key={service.id}
             id={service.id}
-            background={index % 2 === 0 ? 'grid' : 'default'}
+            background={index % 2 === 0 ? "grid" : "default"}
           >
             <div
               ref={(el) => (servicesRef.current[index] = el)}
               className={`flex flex-col lg:flex-row items-center gap-12 ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
               <div className="flex-1">
@@ -229,10 +252,7 @@ const AIServicesPage = () => {
 
       {/* Stats Section */}
       <Section background="accent">
-        <SectionTitle
-          subtitle="Proven Results"
-          title="Impact That Matters"
-        />
+        <SectionTitle subtitle="Proven Results" title="Impact That Matters" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
@@ -257,19 +277,26 @@ const AIServicesPage = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {caseStudies.map((study, index) => (
-            <Card key={index} variant="gradient" className="group">
-              <div className="inline-block px-4 py-2 bg-primary-500/20 border border-primary-500/30 rounded-lg mb-4">
-                <span className="text-primary-400 font-semibold text-sm">
-                  {study.industry}
-                </span>
+            <Card
+              key={index}
+              variant="gradient"
+              className="group flex flex-col justify-between h-full"
+            >
+              <div>
+                <div className="inline-block px-4 py-2 bg-primary-500/20 border border-primary-500/30 rounded-lg mb-4">
+                  <span className="text-primary-400 font-semibold text-sm">
+                    {study.industry}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary-400 transition-colors duration-300">
+                  {study.title}
+                </h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  {study.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary-400 transition-colors duration-300">
-                {study.title}
-              </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {study.description}
-              </p>
-              <div className="p-4 bg-gradient-to-r from-primary-500/20 to-accent-500/20 border border-primary-500/30 rounded-xl">
+
+              <div className="p-4 bg-gradient-to-r from-primary-500/20 to-accent-500/20 border border-primary-500/30 rounded-xl mt-auto">
                 <div className="text-accent-400 font-bold">{study.impact}</div>
               </div>
             </Card>
@@ -284,11 +311,16 @@ const AIServicesPage = () => {
             Ready to Secure Your Data Advantage?
           </h2>
           <p className="text-xl text-gray-300 mb-10">
-            Get started with a free AI readiness assessment and discover how we can transform your operations.
+            Get started with a free AI readiness assessment and discover how we
+            can transform your operations.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button size="lg">Get Free Assessment</Button>
-            <Button variant="secondary" size="lg">Contact Sales</Button>
+            <Link to="/contact-us">
+              <Button size="lg">Get Free Assessment</Button>
+            </Link>
+            <Button variant="secondary" size="lg">
+              Contact Sales
+            </Button>
           </div>
         </div>
       </Section>
