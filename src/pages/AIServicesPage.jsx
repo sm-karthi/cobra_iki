@@ -318,9 +318,11 @@ const AIServicesPage = () => {
             <Link to="/contact-us">
               <Button size="lg">Get Free Assessment</Button>
             </Link>
-            <Button variant="secondary" size="lg">
-              Contact Sales
-            </Button>
+            <Link to="/contact-us">
+              <Button variant="secondary" size="lg">
+                Contact Sales
+              </Button>
+            </Link>
           </div>
         </div>
       </Section>

@@ -59,13 +59,15 @@ const CTA = () => {
                 Schedule Free Demo
               </Button>
             </Link>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary-600 "
-            >
-              Contact Sales
-            </Button>
+
+            <Link to="/contact-us">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/60 text-white hover:bg-white hover:!text-primary-600 hover:border-white transition-colors duration-300">
+                Contact Sales
+              </Button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/20">

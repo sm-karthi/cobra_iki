@@ -240,9 +240,6 @@ const ProductsPage = () => {
             <Link to="/contact-us">
               <Button size="lg">Schedule Consultation</Button>
             </Link>
-            <Button variant="secondary" size="lg">
-              View Case Studies
-            </Button>
           </div>
         </div>
       </Section>
