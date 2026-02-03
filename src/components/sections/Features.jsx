@@ -96,12 +96,12 @@ const Features = () => {
                     <img
                       src={
                         index === 0
-                          ? "/public/images/innovation.png"
+                          ? "/images/innovation.png"
                           : index === 1
-                            ? "/public/images/enterprise.png"
+                            ? "/images/enterprise.png"
                             : index === 2
-                              ? "/public/images/global.png"
-                              : "/public/images/privacy.png"
+                              ? "/images/global.png"
+                              : "/images/privacy.png"
                       }
                       alt="feature icon"
                     />
